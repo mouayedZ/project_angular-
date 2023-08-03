@@ -1,0 +1,123 @@
+<div class="site-wrap">
+
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+  
+  
+    <app-header></app-header>
+  
+    <app-banner [s]="title"></app-banner>
+  
+  
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="signupForm">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+              </div>
+              <div *ngIf="signupForm.controls['firstName'].invalid && 
+                (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                <div *ngIf="signupForm.controls['firstName'].errors.required">
+                  FN is required
+  
+                </div>
+                <div *ngIf="signupForm.controls['firstName'].errors.minlength">
+                  FN should be at least 3 carac
+  
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+              </div>
+              <div
+                *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                <div *ngIf="signupForm.controls['lastName'].errors.required">
+                  LN is required
+  
+                </div>
+                <div *ngIf="signupForm.controls['lastName'].errors.minlength">
+                  LN should be at least 5 carac
+  
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="tel" placeholder="tel">
+              </div>
+              <div
+                *ngIf="signupForm.controls['tel'].invalid && (signupForm.controls['tel'].touched || signupForm.controls['tel'].dirty)">
+                <div *ngIf="signupForm.controls['tel'].errors.required">
+                  tel is required
+  
+                </div>
+                
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" placeholder="email">
+              </div>
+              <div
+                *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                <div *ngIf="signupForm.controls['email'].errors.required">
+                  email is required
+  
+                </div>
+                <div *ngIf="signupForm.controls['email'].errors.email">
+                  email should be at format exemple@gmail.com
+                </div>
+  
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" formControlName="pwd" placeholder="password">
+              </div>
+              <div
+                *ngIf="signupForm.controls['pwd'].invalid && (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].dirty)">
+                <div *ngIf="signupForm.controls['pwd'].errors.required">
+                  pwd is required
+  
+                </div>
+                <div *ngIf="signupForm.controls['pwd'].errors.pattern">
+                  password should be at least one miniscule and majiscule lettres
+  
+                </div>
+              </div>
+              <div class="form-group" style="visibility: hidden;">
+                <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                </div>
+                <div class="text-center">
+                <button class="btn btn-primary mb-5"  (click)="filePicker.click()">
+                Please select your avatar    
+                </button>
+                
+                </div>
+                <div>
+                  <img [src]="imagePreview" alt="" width="200px"> 
+                </div>
+                
+               
+                
+              <div style="color: red;"> {{errorMsg}}</div>
+  
+              <div class="form-group text-center">
+                <input type="submit" (click)="signup()" [disabled]="signupForm.invalid" class="btn btn-primary py-3 px-5" value="signup">
+              </div>
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  </div>

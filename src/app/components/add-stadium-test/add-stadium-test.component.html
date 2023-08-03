@@ -1,0 +1,73 @@
+<div class="site-wrap">
+  
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+  
+  
+    <app-header></app-header>
+  
+   <app-banner [s]="title"></app-banner>
+  
+  
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="addStadiumForm">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="stadiumName" placeholder="Stadium Name">
+              </div>
+              <div *ngIf="addStadiumForm.controls['stadiumName'].invalid && 
+                (addStadiumForm.controls['stadiumName'].touched || addStadiumForm.controls['stadiumName'].dirty)">
+                <div *ngIf="addStadiumForm.controls['stadiumName'].errors.required">
+                 Stadium Name is required
+  
+                </div>
+                
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="stadiumCountry" placeholder="Stadium Country">
+              </div>
+              <div *ngIf="addStadiumForm.controls['stadiumCountry'].invalid && (addStadiumForm.controls['stadiumCountry'].touched || addStadiumForm.controls['stadiumCountry'].dirty)">
+                <div *ngIf="addStadiumForm.controls['stadiumCountry'].errors.required">
+                  stadium country is required
+  
+                </div>
+                
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="stadiumCapacity" placeholder="stadium capacity">
+              </div>
+              <div *ngIf="addStadiumForm.controls['stadiumCapacity'].invalid && (addStadiumForm.controls['stadiumCapacity'].touched || addStadiumForm.controls['stadiumCapacity'].dirty)" >
+  <div *ngIf="addStadiumForm.controls['stadiumCapacity'].errors.required">
+    stadium Capacity is required
+  
+  </div>
+ 
+  
+              </div>
+              
+  
+              <div class="form-group text-center">
+                <input type="submit" (click)="addStadium() " class="btn btn-primary py-3 px-5" value="signup">
+              </div>
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  </div>

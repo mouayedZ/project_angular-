@@ -1,0 +1,134 @@
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+   
+
+   <app-banner [s]="title"></app-banner>
+
+    
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form #loginForm="ngForm" (ngSubmit)="login()">
+              <div class="form-group">
+                <input type="email"
+                [(ngModel)]="obj.email"
+                class="form-control" placeholder="email" name="emaiil " #email="ngModel" required email>
+                <div *ngIf="login.submitted && email.invalid" class="invalidfeedback">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                 <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  </div> 
+              </div>
+              <div class="form-group">
+                <input type="password"
+                [(ngModel)]="obj.pwd"
+                class="form-control" placeholder="password" name="pwdd " #password="ngModel" required minlength="6">
+
+                <div *ngIf="login.submitted && password.invalid" class="invalidfeedback">
+                  <div *ngIf="password.errors.required">Password is required
+                    </div>
+                  <div *ngIf="password.errors.minlength">Password must be at least 6
+                 characters</div>
+                  </div> 
+              </div>
+             
+              <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary py-3 px-5" value="Login">
+              </div>
+              <div style="color: red;">{{errorMsg}}</div>
+            </form> 
+            
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="widget mb-3">
+              <h3>News</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Club News</a></li>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">RSS</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="widget mb-3">
+              <h3>Tickets</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Online Ticket</a></li>
+                <li><a href="#">Payment and Prices</a></li>
+                <li><a href="#">Contact &amp; Booking</a></li>
+                <li><a href="#">Tickets</a></li>
+                <li><a href="#">Coupon</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="widget mb-3">
+              <h3>Matches</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Standings</a></li>
+                <li><a href="#">World Cup</a></li>
+                <li><a href="#">La Lega</a></li>
+                <li><a href="#">Hyper Cup</a></li>
+                <li><a href="#">World League</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="widget mb-3">
+              <h3>Social</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row text-center">
+          <div class="col-md-12">
+            <div class=" pt-5">
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="icon-heart"
+                  aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
+
+  </div>

@@ -1,0 +1,36 @@
+<div class="widget-n!ext-match">
+    <table class="table custom-table">
+      <thead>
+        <tr >
+          <th>Id</th>
+          <th>Team one</th>
+          <th>team two</th>
+          <th>score one</th>
+          <th>score two</th>
+          <th>Actions</th>
+          
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let match of match">
+          <td>{{match._id}}</td>
+          <td><strong class="text-white">{{match.scoreOne}}</strong></td>
+          <td>{{match.teamTwo}}</td>
+          <td>{{match.scoreOne}}</td>
+          <td>{{match.scoretwo}}</td>
+          <td>
+            <button class="btn btn-success" (click)="goTodisplay(match._id)">Display</button>
+            <button class="btn btn-secondary" (click)="goToEdit(match._id)">Edit</button>
+            <button class="btn btn-primary">Delete</button>
+          </td>
+
+          
+        </tr>
+        
+        
+      
+      </tbody>
+    </table>
+  </div>

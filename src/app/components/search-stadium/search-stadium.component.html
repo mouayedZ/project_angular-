@@ -1,0 +1,72 @@
+
+
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <app-header></app-header>
+
+ <app-banner [s]="title"></app-banner>
+
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form #searchForm="ngForm" (ngSubmit)="search()">
+            <div class="form-group">
+              <input type="text"
+              [(ngModel)]="obj.nameStadium"
+              class="form-control" placeholder="stadiumName" name="emaiil ">
+              
+            </div>
+           
+           
+            <div class="form-group text-center">
+              <input type="submit"  class="btn btn-primary py-3 px-5" value="search stadium">
+            </div>
+          </form>  
+        </div>
+       
+      </div>
+     
+      <div class="widget-n!ext-match" *ngIf="searchStadium.length!=0" >
+        <table class="table custom-table " >
+          <thead>
+            <tr >
+              <th>Id</th>
+              <th>stadium Name</th>
+              <th>stadium country</th>
+              <th>stadium capacity</th>
+              
+              
+    
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stadium of searchStadium">
+              <td>{{stadium.id}}</td>
+              <td><strong class="text-white">{{stadium.stadiumName}}</strong></td>
+              <td>{{stadium.stadiumCountry}}</td>
+              <td>{{stadium.stadiumCapacity}}</td>
+             
+             
+    
+              
+            </tr>
+            
+            
+          
+          </tbody>
+        </table>
+      </div>
+   
+    </div>
+  </div>
+ 

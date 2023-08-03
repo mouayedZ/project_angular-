@@ -1,0 +1,33 @@
+<div class="widget-next-match">
+    <table class="table custom-table container">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>owner</th>
+          <th>foundation</th>
+          <th>stadium</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of teams">
+          <td>{{
+            team.id}}</td>
+          <td><strong class="text-white">{{team.name}}</strong></td>
+          <td>{{team.owner}}</td>
+          <td>{{team.foundation}}</td>
+          <td>{{team.stadium}}</td>
+          <td *ngIf="isDisplayed">
+
+
+            <button class="btn btn-primary">Display</button>
+            <button class="btn btn-secondary">Edit </button>
+            <button class="btn btn-success">Delite</button>
+          </td>
+
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>

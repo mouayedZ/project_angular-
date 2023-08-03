@@ -1,0 +1,35 @@
+<div class="widget-n!ext-match">
+    <table class="table custom-table">
+      <thead>
+        <tr >
+          <th>Id</th>
+          <th>stadium Name</th>
+          <th>stadium country</th>
+          <th>stadium capacity</th>
+          
+          
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stadium of stadiumsTab">
+          <td>{{stadium.id}}</td>
+          <td><strong class="text-white">{{stadium.stadiumName}}</strong></td>
+          <td>{{stadium.stadiumCountry}}</td>
+          <td>{{stadium.stadiumCapacity}}</td>
+         
+          <td>
+            <button class="btn btn-success" (click)="goTodisplay(stadium.id)">Display</button>
+            <button class="btn btn-secondary" (click)="goToEdit(match.id)">Edit</button>
+            <button class="btn btn-primary" (click)="delete(stadium.id)">Delete</button>
+          </td>
+
+          
+        </tr>
+        
+        
+      
+      </tbody>
+    </table>
+  </div>

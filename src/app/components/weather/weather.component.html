@@ -1,0 +1,62 @@
+<div class="site-wrap">
+
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+  
+  
+    <app-header></app-header>
+  
+    <app-banner [s]="title"></app-banner>
+  
+  
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="cityForm">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="city" placeholder="city">
+              </div>
+              <div *ngIf="cityForm.controls['city'].invalid && 
+                (cityForm.controls['city'].touched || cityForm.controls['city'].dirty)">
+                <div *ngIf="cityForm.controls['city'].errors.required">
+                 city is required
+  
+                </div>
+               
+              </div>
+             
+                
+               
+                
+              
+  
+              <div class="form-group text-center">
+                <input type="submit" (click)="search()" [disabled]="cityForm.invalid" class="btn btn-primary py-3 px-5" value="search">
+              </div>
+            </form>
+          </div>
+          <div>
+            <div> Humidity: {{weather.humidity}}</div>
+            <div> Pressure: {{weather.pressure}}</div>
+            <div> Temperature: {{weather.temperature}}</div>
+           
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  </div>
